@@ -1,0 +1,88 @@
+{{>header}}
+
+<script>
+    function setup(){
+        var wsServer = 'ws://localhost:4001';
+        var ws = new WebSocket(wsServer);
+
+        ws.onopen = function (e) {
+            log("Connected to WebSocket server.",e);
+            setInterval(function(){sendMessage('');}, 1000);
+        };
+
+        ws.onclose = function (e) {
+            alert('与服务器断开连接');
+            log("Disconnected",e);
+        };
+
+        ws.onmessage = function(e) {
+            try
+            {
+                var info = JSON.parse(e.data);
+                if(info)
+                {
+                    var $tr = $('<tr />');
+                    $tr.append($('<td />').text(info.uidCount));
+                    $tr.append($('<td />').text(info.totalAmount));
+                    $tr.append($('<td />').text(info.orderCount));
+                    $('#infos tbody').empty().append($tr);
+                }
+                else
+                {
+                    $('#readers tbody').html('<tr><td colspan="3">暂无数据</td></tr>');
+                }
+            }
+            catch(er)
+            {
+                log('JSON格式错误：'+er);
+            }
+
+        };
+
+        ws.onerror = function (e) {
+            alert('连接服务器错误');
+            log('Error occured: ' + e.data,e);
+        };
+
+        var sendMessage = function(msg){
+            if(ws.readyState == 1) // WebSocket.CONNECTING
+            {
+                ws.send(msg);
+            }
+        };
+
+    }
+
+    function log(s,e) {
+        /*var output = document.getElementById("output");
+        var p = document.createElement("p");
+        p.style.wordWrap = "break-word";
+        p.style.padding="10px";
+        p.style.background="#eee";
+        p.textContent = "LOG : "+s;
+        output.appendChild(p);*/
+        console.log("LOG : "+s, e);
+    }
+
+    setup();
+</script>
+
+<table class="table table-bordered table-striped table-hover x-table supervisor" id="infos">
+    <caption>销售数据</caption>
+    <thead>
+        <tr class="label-default">
+            <th>用户总数</th>
+            <th>销售总数</th>
+            <th>订单总数</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="3">
+                暂无数据
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+{{>footer}}

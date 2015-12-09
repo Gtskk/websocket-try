@@ -1,0 +1,183 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+/*xs*/
+@media (max-width: 768px) {
+  /*all field labels*/
+  .x-table .control-label { padding-bottom: 5px; }
+  /*listview buttons*/
+  .x-filter .panel-footer button { float: none; width: 100% !important; margin-top: 15px; }
+  /*editview buttons*/
+  #controls button { float: none; width: 100% !important; margin-bottom: 15px; }
+  /*login button*/
+  #login .btn-default { width: 100%; }
+}
+.container-fluid { width: auto; max-width: none; }
+
+/*hide chosen select by default*/
+.chosen-select { display: none; }
+
+/*fix table size and content*/
+.x-table { table-layout: fixed; }
+.x-table thead th,
+.x-table tbody td { word-wrap: break-word; }
+.x-table tbody td span.label-default { display: inline-block; max-width: 100%; white-space: normal; margin-bottom: 2px; }
+
+/*editview buttons*/
+#controls { text-align: right; }
+#controls button { width: auto; }
+#controls .btn-danger { float: left; }
+
+/*fixed header fix*/
+#content { padding-top: 70px; }
+/*login header*/
+#login .label-default { color: #f8f8f2; }
+
+/*mainview*/
+.x-table tbody td .glyphicon-plus { font-size: 8px; position: relative; top: -1px; }
+
+/*listview add record*/
+#express-admin { position: relative; }
+#express-admin h2 .btn { font-weight: normal; float: right; }
+#express-admin h2 .glyphicon-filter { display: inline-block; font-size: 12px; }
+#express-admin h2 .glyphicon-filter:hover { text-decoration: none; }
+/*listview mtm labels*/
+.x-table tbody td .label { margin-right: 5px; }
+.x-table tbody td .label:last-child { margin: 0; }
+/*listview search filter*/
+.x-filter .panel-heading .checkbox { float: right; margin-top: -18px; }
+.x-filter .panel-body { padding: 0; }
+.x-filter .panel-body table { margin-bottom: 0; }
+.x-filter .panel-body table tr:first-child td { border: 0; }
+.x-filter .panel-body .form-group:last-child { margin-bottom: 0; }
+.x-filter .panel-footer .form-group { margin-bottom: 0; }
+.x-filter .panel-footer .form-group div.col-lg-3:last-child { text-align: right; }
+.x-filter .panel-footer button { width: auto; float: right; }
+.x-filter .panel-footer button:first-child { margin-left: 10px; }
+.x-filter.x-hidden .panel-footer { border-top: 0; }
+.x-filter.x-collapsed { display: none; }
+
+
+/*editview*/
+.btn-today { line-height: 240%; }
+.x-table [type=file] { margin-top: 4px; }
+
+/*fix for all fields*/
+.x-table .form-group { margin-bottom: 0; }
+/*inline table headers*/
+.x-table .label-default { color: #f8f8f2; }
+/*checkbox remove inline*/
+.x-table .head td { padding-top: 0; padding-bottom: 0; }
+.x-table .head label { float: right; margin-bottom: 0; }
+.x-table .head label input { margin-top: 0; }
+.x-table .jumbotron { padding-left: 0; padding-right: 0; border-radius: 0; }
+.x-table .jumbotron label { font-size: 14px; font-weight: normal; cursor: pointer; margin-right: 8px; }
+.x-table .jumbotron label [type=checkbox] { position: relative; top: 3px; cursor: pointer; }
+.x-table .remove { margin-right: 2px; }
+/*field error message*/
+.x-table .form-group .help-block { margin-bottom: 0; }
+/*add another link*/
+.x-table tfoot > tr > td { text-align: right; padding-top: 0; padding-bottom: 0; }
+
+
+/*dark themes fix*/
+.datetimepicker * { background: #fff; color: #555; }
+
+/*chosen*/
+.chosen-container { font-size: inherit; line-height: inherit; }
+.chosen-container .chosen-drop { color: #555; }
+.chosen-container .chosen-single { line-height: inherit; height: auto; background-color: #fff; padding: 0; }
+.chosen-container .chosen-single span { padding: 6px 12px; }
+
+/*single*/
+.chosen-container-single .chosen-single {
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;}
+.chosen-container-single .chosen-single abbr { top: 12px; }
+.chosen-container-single .chosen-single div b { width: 12px; height: 12px; background-position: 0 0; position: relative; top: 7px; }
+/*active*/
+.chosen-container-active .chosen-single {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0 none;}
+.chosen-container-active.chosen-with-drop .chosen-single div b { background-position: -18px 0; }
+.chosen-container-active .chosen-single-with-drop { border-radius: 4px 4px 0px 0px; }
+/*error*/
+.has-error .chosen-container .chosen-single span { color: #B94A48; }
+.has-error .chosen-container .chosen-single {
+  border-color: #B94A48;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;}
+.has-error .chosen-container-active .chosen-single-with-drop {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #D59392;}
+
+/*multiple*/
+.chosen-container-multi .chosen-choices li.search-field input[type=text] { height: auto; }
+.chosen-container-multi .chosen-choices {
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  padding-top: 2px; padding-bottom: 2px;}
+/*default*/
+.chosen-container-multi .chosen-choices li.search-field input[type=text].default { color: #999; padding-left: 12px; }
+/*active*/
+.chosen-container-multi.chosen-container-active .chosen-choices {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0 none;}
+/*error*/
+.has-error .chosen-container-multi .chosen-choices {
+  border-color: #B94A48;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;}
+.has-error .chosen-container-multi.chosen-container-active .chosen-choices {
+  border-color: #B94A48;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #D59392;}
+
+
+/*sticky footer*/
+html, body { height: 100%; }
+#wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -30px; }
+footer, #footer-push { height: 30px; text-align: center; }
+footer p { margin-bottom: 0; }
+
+
+/*custom scrollbars in WebKit*/
+::-webkit-scrollbar {
+  width: 13px;
+}
+::-webkit-scrollbar-track-piece {
+  background: #333;
+  -webkit-border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background: #bbb;
+  -webkit-border-radius: 8px;
+  outline: 2px solid #333;
+  outline-offset: -2px;
+  border: 2px solid #333;
+}
+::-webkit-scrollbar-thumb:hover {
+  height: 50px;
+  background-color: #ddd;
+  -webkit-border-radius: 8px;
+}
+
+
+/** 监控有关样式 */
+.supervisor caption {
+  font-size: 25px;
+  background: #333;
+  color: #fff;
+}
